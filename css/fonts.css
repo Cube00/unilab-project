@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Helvetica";
+    src: url("../fonts/Helvetica400.eot");
+    /* IE9 Compat Modes */
+    src: url("../fonts/Helvetica400.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/Helvetica400.woff2") format("woff2"), /* Super Modern Browsers */
+    url("../fonts/Helvetica.woff") format("woff"), /* Pretty Modern Browsers */
+    url("../fonts/Helvetica.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/Helvetica.svg#Helvetica") format("svg");
+    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "Acumin-Regular";
+    src: url("../fonts/AcuminPro-Regular.eot");
+    /* IE9 Compat Modes */
+    src: url("../fonts/AcuminPro-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/AcuminPro-Regular.woff2") format("woff2"), /* Super Modern Browsers */
+    url("../fonts/AcuminPro-Regular.woff") format("woff"), /* Pretty Modern Browsers */
+    url("../fonts/AcuminPro-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/AcuminPro-Regular.svg#AcuminPro-Regular") format("svg");
+    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "AcuminPro-Bold";
+    src: url("../fonts/AcuminPro-Bold.eot");
+    /* IE9 Compat Modes */
+    src: url("../fonts/AcuminPro-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/AcuminPro-Bold.woff2") format("woff2"), /* Super Modern Browsers */
+    url("../fonts/AcuminPro-Bold.woff") format("woff"), /* Pretty Modern Browsers */
+    url("../fonts/AcuminPro-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../fonts/AcuminPro-Bold.svg#AcuminPro-Bold") format("svg");
+    /* Legacy iOS */
+}
