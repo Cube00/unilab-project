@@ -1,13 +1,39 @@
 $white: #ffffff;
-$primarycolor: #F6F8F9;
+$primarycolor: #f6f8f9;
 $almostblack: #202124;
-$helv: 'Helvetica';
-$acreg: 'Acumin-Regular';
-$acbold: 'AcuminPro-Bold';
+$helv: "Helvetica";
+$acreg: "Acumin-Regular";
+$acbold: "AcuminPro-Bold";
 * {
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
+}
+
+@mixin flexBox($justify: null, $align: null) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    align-content: $align;
+}
+
+@mixin dataBox($margin-y: null, $margin-x: null, $font: null) {
+    margin: $margin-y $margin-x;
+    display: flex;
+    img {
+        margin-right: 10px;
+        margin-top: -3px;
+    }
+    span {
+        font-size: 13px;
+        font-family: $font;
+        color: #a6adb4;
+    }
+}
+
+@mixin arrowButton() {
+    cursor: pointer;
+    outline: none;
 }
 
 body {
@@ -18,26 +44,23 @@ body {
     margin: auto;
     max-width: 1160px;
     width: 100%;
+    overflow: hidden;
 }
 
 header {
     background-color: $primarycolor;
-    display: flex;
     padding: 16px 20px;
-    justify-content: space-between;
-    align-content: center;
+    @include flexBox($justify: space-between, $align: center);
     .logo {
         display: flex;
         a {
-            display: flex;
-            align-content: center;
+            @include flexBox($align: center);
         }
     }
     .navbar {
         display: flex;
         nav {
-            display: flex;
-            align-items: center;
+            @include flexBox($align: center);
             ul {
                 display: flex;
                 li {
@@ -81,76 +104,84 @@ header {
 
 .primary-section {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    @include flexBox($justify: space-between);
     background-color: #fff;
     .world-news-block {
         position: relative;
-        width: 840px;
+        // width: 840px;
+        width: 58%;
         height: 600px;
-        background-image: url('../images/cover.png');
+        background-image: url("../images/cover.png");
         background-size: cover;
         background-repeat: no-repeat;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        .world-block-info {
-            position: relative;
-            width: 600px;
-            overflow: hidden;
-            right: 14%;
-            h3 {
-                padding: 0 0 40px;
-                font-size: 24px;
-                font-family: $helv;
-                font-weight: bold;
-                color: $white;
-                border-bottom: 1px solid$white;
-            }
-            h2 {
-                padding: 40px 0 5px;
-                font-size: 24px;
-                font-weight: bold;
-                font-family: $helv;
-                color: $white;
-            }
-            article {
-                font-family: $helv;
-                font-size: 16px;
-                color: $white;
-            }
-            .btn-lmore {
-                width: 134px;
-                height: 40px;
-                margin: 30px 0;
-                color: #fff;
-                font-size: 11px;
-                font-family: $helv;
-                font-weight: bold;
-                background-color: #FA6980;
-                border-radius: 6px;
-                outline: none;
-                border: none;
-                cursor: pointer;
-            }
+        @include flexBox($justify: flex-end, $align: center);
+    }
+}
+
+.primary {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    z-index: 1;
+    margin-top: -600px;
+    margin-bottom: 40px;
+    @include flexBox($justify: space-between, $align: center);
+    .world-block-info {
+        overflow: hidden;
+        width: 50%;
+        h3 {
+            padding: 0 0 40px;
+            font-size: 24px;
+            font-family: $helv;
+            font-weight: bold;
+            color: $white;
+            border-bottom: 1px solid$white;
+        }
+        h2 {
+            padding: 40px 0 5px;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: $helv;
+            color: $white;
+        }
+        article {
+            font-family: $helv;
+            font-size: 16px;
+            color: $white;
+        }
+        .btn-lmore {
+            width: 134px;
+            height: 40px;
+            margin: 30px 0;
+            color: #fff;
+            font-size: 11px;
+            font-family: $helv;
+            font-weight: bold;
+            background-color: #fa6980;
+            border-radius: 6px;
+            outline: none;
+            border: none;
+            cursor: pointer;
         }
     }
     .more-news {
-        width: 40%;
-        margin: 100px 0px 0;
+        width: 33%;
+        overflow: hidden;
+        .wrap-items {
+            width: 100%;
+            overflow: hidden;
+        }
         .title-news-arrows {
-            display: flex;
-            justify-content: space-between;
-            margin: 0 100px 40px;
+            @include flexBox($justify: space-between);
+            margin: 0 0 40px 0px;
             padding: 0 0 35px;
-            width: 340px;
             border-bottom: 1px solid#EBEDED;
             .more-news-arrows {
                 margin-top: 5px;
                 margin-bottom: -5px;
                 img {
                     margin: 0px 0 10px 25px;
-                    cursor: pointer;
+                    @include arrowButton;
                 }
             }
             h3 {
@@ -162,9 +193,10 @@ header {
             }
         }
         .more-new-items {
-            margin: 0 100px;
+            display: block;
+            position: relative;
+            margin: 0 0 0;
             padding: 0 0 35px;
-            width: 340px;
             .item-more-nw {
                 margin-bottom: 30px;
                 h3 {
@@ -172,7 +204,7 @@ header {
                     font-size: 16px;
                     font-family: $helv;
                     font-weight: bold;
-                    color: #FA6980;
+                    color: #fa6980;
                 }
                 h2 {
                     margin: 0 0 6px;
@@ -184,20 +216,12 @@ header {
                 article {
                     font-size: 16px;
                     font-family: $acreg;
-                    color: #A6ADB4;
+                    color: #a6adb4;
                 }
                 .item-more-data {
-                    margin: 18px 0;
-                    display: flex;
-                    img {
-                        margin-right: 10px;
-                        margin-top: -3px;
-                    }
-                    span {
-                        font-size: 13px;
-                        font-family: $acreg;
-                        color: #A6ADB4;
-                    }
+                    @include dataBox(18px,
+                    0px,
+                    $acreg);
                 }
             }
         }
@@ -207,8 +231,7 @@ header {
 .trending {
     margin: 40px 0;
     .trending-heading {
-        display: flex;
-        justify-content: space-between;
+        @include flexBox($justify: space-between);
         h2 {
             font-size: 24px;
             font-family: $helv;
@@ -218,63 +241,56 @@ header {
         .trending-arrows {
             img {
                 margin: 0 0 0 25px;
+                cursor: pointer;
+                outline: none;
             }
         }
     }
     .trending-items {
+        position: relative;
         overflow: hidden;
         margin: 30px 0 0;
-        .nowrap-items {
-            width: 100%;
-            white-space: nowrap;
-            .tranding-item {
-                display: inline-block;
-                vertical-align: top;
-                width: 360px;
-                margin-right: 36px;
-                background-color: $white;
-                border-radius: 6px;
+        width: 100%;
+        white-space: nowrap;
+        .swiper-slide {
+            width: 360px;
+            margin-right: 36px;
+            background-color: $white;
+            border-radius: 6px;
+            overflow: hidden;
+            .item-img {
+                position: relative;
+                height: 180px;
                 overflow: hidden;
-                .item-img {
-                    position: relative;
-                    height: 180px;
-                    overflow: hidden;
-                    img {
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        width: 360px;
-                    }
+                img {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 360px;
                 }
-                .trending-info {
-                    padding: 43px 40px;
-                    overflow: hidden;
-                    h2 {
-                        margin: 0 0 10px;
-                        font-family: $helv;
-                        font-size: 16px;
-                        font-weight: bold;
-                        color: $almostblack;
-                    }
-                    article {
-                        line-height: 1.6;
-                        margin: 0 0 15px;
-                        font-family: $acreg;
-                        font-size: 13px;
-                        color: #A6ADB4;
-                        white-space: pre-wrap;
-                    }
-                    .trending-data {
-                        display: flex;
-                        img {
-                            margin: -2px 10px 0 0;
-                        }
-                        span {
-                            font-size: 13px;
-                            font-family: $helv;
-                            color: #A6ADB4;
-                        }
-                    }
+            }
+            .trending-info {
+                padding: 43px 40px;
+                overflow: hidden;
+                h2 {
+                    margin: 0 0 10px;
+                    font-family: $helv;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: $almostblack;
+                }
+                article {
+                    line-height: 1.6;
+                    margin: 0 0 15px;
+                    font-family: $acreg;
+                    font-size: 13px;
+                    color: #a6adb4;
+                    white-space: pre-wrap;
+                }
+                .trending-data {
+                    @include dataBox(0px,
+                    0px,
+                    $helv);
                 }
             }
         }
@@ -283,8 +299,7 @@ header {
 
 .happening {
     .happening-heading {
-        display: flex;
-        justify-content: space-between;
+        @include flexBox($justify: space-between);
         h2 {
             font-size: 24px;
             font-family: $helv;
@@ -294,6 +309,7 @@ header {
         .happening-arrows {
             img {
                 margin: 0 0 0 25px;
+                @include arrowButton;
             }
         }
     }
@@ -344,15 +360,9 @@ header {
                             color: $white;
                         }
                         .lrg-item-dt {
-                            display: flex;
-                            img {
-                                margin: -1px 10px 0 0;
-                            }
-                            span {
-                                font-family: $helv;
-                                font-size: 13px;
-                                color: #A6ADB4;
-                            }
+                            @include dataBox(0px,
+                            0px,
+                            $helv);
                         }
                     }
                 }
@@ -386,9 +396,9 @@ header {
                         span {
                             font-family: $helv;
                             font-size: 13px;
-                            color: #A6ADB4;
+                            color: #a6adb4;
                             a {
-                                color: #A6ADB4;
+                                color: #a6adb4;
                                 text-decoration: underline;
                             }
                         }
@@ -404,8 +414,7 @@ header {
     margin-bottom: 92px;
     border-bottom: 2px solid#ebeded;
     .story-heading {
-        display: flex;
-        justify-content: space-between;
+        @include flexBox($justify: space-between);
         .navigation {
             img {
                 float: left;
@@ -420,7 +429,7 @@ header {
                 color: $almostblack;
             }
             .category-active {
-                color: #A6ADB4;
+                color: #a6adb4;
             }
         }
         .filter {
@@ -436,11 +445,9 @@ header {
         background-color: $white;
         border-radius: 6px;
         .wrd-news {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flexBox($justify: center, $align: center);
             width: 50%;
-            background-image: url('../images/story-cv1.png');
+            background-image: url("../images/story-cv1.png");
             border-top-left-radius: 6px;
             border-bottom-left-radius: 6px;
             .wrd-inf {
@@ -450,19 +457,18 @@ header {
                     margin-bottom: 15px;
                     padding: 0 0 15px;
                     position: relative;
-                    display: flex;
-                    justify-content: center;
+                    @include flexBox($justify: center);
                     font-size: 32px;
                     font-family: $helv;
                     font-weight: bold;
                     color: $white;
                     &:after {
-                        content: '';
+                        content: "";
                         position: absolute;
                         width: 40px;
                         height: 2px;
                         bottom: 0px;
-                        background-color: #FA6980;
+                        background-color: #fa6980;
                     }
                 }
                 span {
@@ -492,9 +498,7 @@ header {
         }
         .filter-tool {
             width: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flexBox($justify: center, $align: center);
             .select-wrap {
                 .select-tool {
                     display: flex;
@@ -519,7 +523,7 @@ header {
                             color: #a6adb4;
                             outline: none;
                             .rae {
-                                background: #000!important;
+                                background: #000 !important;
                             }
                         }
                     }
@@ -540,7 +544,7 @@ header {
                     width: 134px;
                     height: 40px;
                     padding: 0 30px;
-                    background-color: #FA6980;
+                    background-color: #fa6980;
                     font-size: 11px;
                     font-family: $helv;
                     font-weight: bold;
@@ -593,7 +597,7 @@ header {
                 column-count: 2;
                 column-fill: auto;
                 height: 200px;
-                color: #A6ADB4;
+                color: #a6adb4;
                 font-family: $helv;
                 font-size: 14px;
                 .article-data {
@@ -603,7 +607,7 @@ header {
                         margin-top: 5px;
                     }
                     margin-top: 15px;
-                    font-size:13px;
+                    font-size: 13px;
                 }
             }
         }
@@ -639,18 +643,16 @@ footer {
     position: relative;
     bottom: 0;
     margin-top: 30px;
-    background-color: #A6ADB4;
+    background-color: #a6adb4;
     .wrap-footer {
         max-width: 1160px;
         width: 100%;
         margin: auto;
         padding-top: 40px;
         padding-bottom: 40px;
-        display: flex;
-        justify-content: space-between;
+        @include flexBox($justify: space-between);
         .footer-cats {
-            display: flex;
-            justify-content: space-between;
+            @include flexBox($justify: space-between, $align: center);
             .block-cats {
                 margin: 0 15px;
                 li a {
@@ -701,12 +703,9 @@ footer {
 
 @media only screen and (min-width: 1385px) {
     .world-news-block {
-        width: 55%!important;
-        .world-block-info {
-            right: 6%!important;
-        }
+        width: 56% !important;
     }
-    .more-news {
-        width: 45%!important;
+    .primary .more-news {
+        width: 37%;
     }
 }

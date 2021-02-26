@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Document</title>
+    <script src="js/swiper.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
 </head>
 
 <body>
@@ -45,50 +47,77 @@
 
     <section class="primary-section">
         <div class="world-news-block">
-            <div class="world-block-info">
-                <h3>
-                    WORLD NEWS
-                </h3>
-                <h2>Amazing places in Amrica to visit.</h2>
-                <article>For some reason - this country, this city, this neighborhood, this particular street - is the place you are living a majority of your life in.</article>
-                <button class="btn-lmore">Learn More</button>
-            </div>
+        </div>
+    </section>
+
+    <div class="wall primary">
+        <div class="world-block-info">
+            <h3>
+                WORLD NEWS
+            </h3>
+            <h2>Amazing places in Amrica to visit.</h2>
+            <article>For some reason - this country, this city, this neighborhood, this particular street - is the place you are living a majority of your life in.</article>
+            <button class="btn-lmore">Learn More</button>
         </div>
         <div class="more-news">
             <div class="title-news-arrows">
                 <h3>more news</h3>
                 <div class="more-news-arrows">
-                    <img src="images/arrow-back.svg" alt="">
-                    <img src="images/arrow.svg" alt="">
+                    <img class="prew" src="images/arrow-back.svg" alt="">
+                    <img class="next" src="images/arrow.svg" alt="">
+                </div>
+                <div class="swiper-pagination swiper-pagination1"></div>
+            </div>
+            <div class="wrap-items">
+                <div class="more-item-content swiper-wrapper">
+                    <div class="swiper-slide more-new-items">
+                        <div class="item-more-nw">
+                            <h3>TRAVEL</h3>
+                            <h2>Article title</h2>
+                            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati est laudantium...</article>
+                            <div class="item-more-data">
+                                <img src="images/date.svg" alt="">
+                                <span>2 min ago</span>
+                            </div>
+                        </div>
+
+                        <div class="item-more-nw">
+                            <h3>TECHNOLOGY</h3>
+                            <h2>Article title</h2>
+                            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati est laudantium...</article>
+                            <div class="item-more-data">
+                                <img src="images/date.svg" alt="">
+                                <span>2 min ago</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide more-new-items">
+                        <div class="item-more-nw">
+                            <h3>TRAVEL</h3>
+                            <h2>Article title</h2>
+                            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati est laudantium...</article>
+                            <div class="item-more-data">
+                                <img src="images/date.svg" alt="">
+                                <span>2 min ago</span>
+                            </div>
+                        </div>
+
+                        <div class="item-more-nw">
+                            <h3>TECHNOLOGY</h3>
+                            <h2>Article title</h2>
+                            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati est laudantium...</article>
+                            <div class="item-more-data">
+                                <img src="images/date.svg" alt="">
+                                <span>2 min ago</span>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            <div class="more-item-content">
-                <div class="more-new-items">
-                    <div class="item-more-nw">
-                        <h3>TRAVEL</h3>
-                        <h2>Article title</h2>
-                        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati est laudantium...</article>
-                        <div class="item-more-data">
-                            <img src="images/date.svg" alt="">
-                            <span>2 min ago</span>
-                        </div>
-                    </div>
-
-                    <div class="item-more-nw">
-                        <h3>TECHNOLOGY</h3>
-                        <h2>Article title</h2>
-                        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati est laudantium...</article>
-                        <div class="item-more-data">
-                            <img src="images/date.svg" alt="">
-                            <span>2 min ago</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
         </div>
-    </section>
+    </div>
 
     <div class="wall">
 
@@ -96,14 +125,16 @@
             <div class="trending-heading">
                 <h2>TRENDING</h2>
                 <div class="trending-arrows">
-                    <img src="images/arrow-back.svg" alt="">
-                    <img src="images/arrow.svg" alt="">
+                    <img class='arrow-prew' src="images/arrow-back.svg" alt="">
+                    <img class="arrow-next" src="images/arrow.svg" alt="">
                 </div>
+                <div class="swiper-pagination swiper-pagination2"></div>
             </div>
-            <div class="trending-items">
-                <div class="nowrap-items">
 
-                    <div class="tranding-item">
+            <div class="trending-items">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
                         <div class="item-img">
                             <img src="images/poster1.jpg" alt="poster">
                         </div>
@@ -117,7 +148,7 @@
                         </div>
                     </div>
 
-                    <div class="tranding-item">
+                    <div class="swiper-slide">
                         <div class="item-img">
                             <img src="images/poster2.jpg" alt="poster">
                         </div>
@@ -131,7 +162,7 @@
                         </div>
                     </div>
 
-                    <div class="tranding-item">
+                    <div class="swiper-slide">
                         <div class="item-img">
                             <img src="images/poster3.jpg" alt="poster">
                         </div>
@@ -145,6 +176,19 @@
                         </div>
                     </div>
 
+                    <div class="swiper-slide">
+                        <div class="item-img">
+                            <img src="images/poster3.jpg" alt="poster">
+                        </div>
+                        <div class="trending-info">
+                            <h2>Morbi elefiond a libero</h2>
+                            <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</article>
+                            <div class="trending-data">
+                                <img src="images/date.svg" alt="data">
+                                <span>3m ago</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -153,74 +197,141 @@
             <div class="happening-heading">
                 <h2>happening now</h2>
                 <div class="happening-arrows">
-                    <img src="images/arrow-back.svg" alt="">
-                    <img src="images/arrow.svg" alt="">
+                    <img class="hp-prew" src="images/arrow-back.svg" alt="">
+                    <img class="hp-next" src="images/arrow.svg" alt="">
                 </div>
             </div>
             <div class="happening-items">
-                <div class="happening-wrap">
-                    <div class="hp-large-items">
-                        <div class="lrg-item">
-                            <img class="poster-lrg" src="images/Image2.jpg" alt="">
-                            <div class="lrg-item-inf">
-                                <h4>CITY</h4>
-                                <h2>Large article title</h2>
-                                <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi labore a? Consequatur soluta, officia voluptas quaerat cupiditate quisquam, error culpa voluptatibus ipsum distinctio</article>
-                                <div class="lrg-item-dt">
-                                    <img src="images/date.svg" alt="date">
-                                    <span>2m ago</span>
+                <div class="hp-w swiper-wrapper">
+                    <div class="happening-wrap swiper-slide">
+                        <div class="hp-large-items">
+                            <div class="lrg-item">
+                                <img class="poster-lrg" src="images/Image2.jpg" alt="">
+                                <div class="lrg-item-inf">
+                                    <h4>CITY</h4>
+                                    <h2>Large article title</h2>
+                                    <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi labore a? Consequatur soluta, officia voluptas quaerat cupiditate quisquam, error culpa voluptatibus ipsum distinctio</article>
+                                    <div class="lrg-item-dt">
+                                        <img src="images/date.svg" alt="date">
+                                        <span>2m ago</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="lrg-item">
-                            <img class="poster-lrg" src="images/Image.jpg" alt="">
-                            <div class="lrg-item-inf">
-                                <h4>TRAVEL</h4>
-                                <h2>Large article title</h2>
-                                <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi labore a? Consequatur soluta, officia voluptas quaerat cupiditate quisquam, error culpa voluptatibus ipsum distinctio</article>
-                                <div class="lrg-item-dt">
-                                    <img src="images/date.svg" alt="date">
-                                    <span>2m ago</span>
+                            <div class="lrg-item">
+                                <img class="poster-lrg" src="images/Image.jpg" alt="">
+                                <div class="lrg-item-inf">
+                                    <h4>TRAVEL</h4>
+                                    <h2>Large article title</h2>
+                                    <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi labore a? Consequatur soluta, officia voluptas quaerat cupiditate quisquam, error culpa voluptatibus ipsum distinctio</article>
+                                    <div class="lrg-item-dt">
+                                        <img src="images/date.svg" alt="date">
+                                        <span>2m ago</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
+                        <div class="hp-small-items">
+                            <div class="small-item">
+                                <div class="small-item-post">
+                                    <img src="images/sm-poster1.png" alt="poster">
+                                </div>
+                                <h2>Small title</h2>
+                                <div class="small-itm-date">
+                                    <img src="images/date.svg" alt="date">
+                                    <span>3h ago by <a href="">Worldnews</a></span>
+                                </div>
+                            </div>
+
+                            <div class="small-item">
+                                <div class="small-item-post">
+                                    <img src="images/sm-poster2.jpg" alt="poster">
+                                </div>
+                                <h2>Small title</h2>
+                                <div class="small-itm-date">
+                                    <img src="images/date.svg" alt="date">
+                                    <span>4h ago by <a href="">Days</a></span>
+                                </div>
+                            </div>
+
+                            <div class="small-item">
+                                <div class="small-item-post">
+                                    <img src="images/sm-poster3.jpg" alt="poster">
+                                </div>
+                                <h2>Small title</h2>
+                                <div class="small-itm-date">
+                                    <img src="images/date.svg" alt="date">
+                                    <span>3h ago by <a href="">Monica</a></span>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="hp-small-items">
-                        <div class="small-item">
-                            <div class="small-item-post">
-                                <img src="images/sm-poster1.png" alt="poster">
+                    <div class="happening-wrap swiper-slide">
+                        <div class="hp-large-items">
+                            <div class="lrg-item">
+                                <img class="poster-lrg" src="images/Image2.jpg" alt="">
+                                <div class="lrg-item-inf">
+                                    <h4>CITY</h4>
+                                    <h2>Large article title</h2>
+                                    <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi labore a? Consequatur soluta, officia voluptas quaerat cupiditate quisquam, error culpa voluptatibus ipsum distinctio</article>
+                                    <div class="lrg-item-dt">
+                                        <img src="images/date.svg" alt="date">
+                                        <span>2m ago</span>
+                                    </div>
+                                </div>
                             </div>
-                            <h2>Small title</h2>
-                            <div class="small-itm-date">
-                                <img src="images/date.svg" alt="date">
-                                <span>3h ago by <a href="">Worldnews</a></span>
-                            </div>
-                        </div>
 
-                        <div class="small-item">
-                            <div class="small-item-post">
-                                <img src="images/sm-poster2.jpg" alt="poster">
+                            <div class="lrg-item">
+                                <img class="poster-lrg" src="images/Image.jpg" alt="">
+                                <div class="lrg-item-inf">
+                                    <h4>TRAVEL</h4>
+                                    <h2>Large article title</h2>
+                                    <article>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi labore a? Consequatur soluta, officia voluptas quaerat cupiditate quisquam, error culpa voluptatibus ipsum distinctio</article>
+                                    <div class="lrg-item-dt">
+                                        <img src="images/date.svg" alt="date">
+                                        <span>2m ago</span>
+                                    </div>
+                                </div>
                             </div>
-                            <h2>Small title</h2>
-                            <div class="small-itm-date">
-                                <img src="images/date.svg" alt="date">
-                                <span>4h ago by <a href="">Days</a></span>
-                            </div>
-                        </div>
 
-                        <div class="small-item">
-                            <div class="small-item-post">
-                                <img src="images/sm-poster3.jpg" alt="poster">
-                            </div>
-                            <h2>Small title</h2>
-                            <div class="small-itm-date">
-                                <img src="images/date.svg" alt="date">
-                                <span>3h ago by <a href="">Monica</a></span>
-                            </div>
                         </div>
+                        <div class="hp-small-items">
+                            <div class="small-item">
+                                <div class="small-item-post">
+                                    <img src="images/sm-poster1.png" alt="poster">
+                                </div>
+                                <h2>Small title</h2>
+                                <div class="small-itm-date">
+                                    <img src="images/date.svg" alt="date">
+                                    <span>3h ago by <a href="">Worldnews</a></span>
+                                </div>
+                            </div>
 
+                            <div class="small-item">
+                                <div class="small-item-post">
+                                    <img src="images/sm-poster2.jpg" alt="poster">
+                                </div>
+                                <h2>Small title</h2>
+                                <div class="small-itm-date">
+                                    <img src="images/date.svg" alt="date">
+                                    <span>4h ago by <a href="">Days</a></span>
+                                </div>
+                            </div>
+
+                            <div class="small-item">
+                                <div class="small-item-post">
+                                    <img src="images/sm-poster3.jpg" alt="poster">
+                                </div>
+                                <h2>Small title</h2>
+                                <div class="small-itm-date">
+                                    <img src="images/date.svg" alt="date">
+                                    <span>3h ago by <a href="">Monica</a></span>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -299,6 +410,7 @@
         </div>
     </footer>
 
+    <script src="js/control.js"></script>
 </body>
 
 </html>
