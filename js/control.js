@@ -11,11 +11,25 @@ var morenews = new Swiper(".wrap-items", {
         prevEl: ".prew",
     },
     effect: "slide",
-    spaceBetween: 40,
+    spaceBetween: 20,
     slidesPerView: 1,
+    slidesPerColumn: 2,
     centeredSlides: false,
     slidesOffsetBefore: 0,
     grabCursor: true,
+    breakpoints: {
+        // when window width is >= 320px
+        768: {
+            slidesPerColumn: 1,
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        560: {
+            slidesPerColumn: 2,
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+    },
 });
 
 var trending = new Swiper(".trending-items", {
@@ -42,23 +56,18 @@ var trending = new Swiper(".trending-items", {
             slidesPerView: 3,
             spaceBetween: 8,
         },
-        720: {
-            slidesPerView: 3,
-            spaceBetween: 6,
-        },
-        540: {
+        768: {
             slidesPerView: 2,
+            spaceBetween: 24,
+        },
+        630: {
+            slidesPerView: 1,
             spaceBetween: 4,
-        },
-        320: {
-            slidesPerView: 2,
-            spaceBetween: 2,
-            direction: "vertical",
         },
     },
 });
 
-var happening = new Swiper(".happening-items", {
+var happening = new Swiper(".hp-small-items", {
     speed: 400,
     spaceBetween: 10,
     initialSlide: 0,
@@ -71,9 +80,23 @@ var happening = new Swiper(".happening-items", {
         prevEl: ".hp-prew",
     },
     effect: "slide",
-    spaceBetween: 40,
+    spaceBetween: 3,
     slidesPerView: 1,
+    slidesPerColumn: 3,
     centeredSlides: false,
     slidesOffsetBefore: 0,
     grabCursor: true,
+    rebuildOnUpdate: true,
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            slidesPerColumn: 1,
+            spaceBetween: 24,
+        },
+        500: {
+            slidesPerView: 1,
+            slidesPerColumn: 3,
+            spaceBetween: 2,
+        },
+    },
 });
