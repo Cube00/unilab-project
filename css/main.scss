@@ -529,9 +529,14 @@ header {
     margin-top: 15px;
     margin-bottom: 92px;
     border-bottom: 2px solid#ebeded;
+    @include media("<=848px") {
+        border-bottom: none;
+        margin-bottom: 38px;
+    }
     .story-heading {
         @include flexBox($justify: space-between);
         .navigation {
+            @include flexBox($align: center);
             img {
                 float: left;
                 margin-top: 0;
@@ -560,12 +565,27 @@ header {
         margin-top: 20px;
         background-color: $white;
         border-radius: 6px;
+        @include media("<=858px") {
+            flex-direction: column;
+            height: auto;
+        }
         .wrd-news {
             @include flexBox($justify: center, $align: center);
             width: 50%;
             background-image: url("../images/story-cv1.png");
             border-top-left-radius: 6px;
             border-bottom-left-radius: 6px;
+            @include media("<=858px") {
+                flex-wrap: wrap;
+                width: 100%;
+                height: 400px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 6px;
+                background-size: 100% 400px;
+            }
+            @include media("<=447px") {
+                height: 388px;
+            }
             .wrd-inf {
                 display: flex;
                 flex-direction: column;
@@ -594,6 +614,9 @@ header {
                     font-weight: bold;
                     color: $white;
                     text-align: center;
+                    @include media("<=447px") {
+                        padding: 10px 20px 30px;
+                    }
                 }
                 .wrd-avatar {
                     position: relative;
@@ -615,12 +638,26 @@ header {
         .filter-tool {
             width: 50%;
             @include flexBox($justify: center, $align: center);
+            @include media("<=858px") {
+                width: 100%;
+                padding: 90px 0;
+            }
+            @include media("<=447px") {
+                padding: 40px 0;
+            }
             .select-wrap {
+                @include media("<=447px") {
+                    padding: 0 30px;
+                    width: 100%;
+                }
                 .select-tool {
                     display: flex;
                     flex-direction: column;
                     width: 360px;
                     margin: 0 0 30px;
+                    @include media("<=447px") {
+                        width: 100%;
+                    }
                     h4 {
                         margin: 0 0 10px;
                         font-size: 13px;
@@ -681,6 +718,9 @@ header {
         margin-top: 40px;
         margin-bottom: 70px;
         display: flex;
+        @include media("<=858px") {
+            flex-direction: column;
+        }
         .half-rev {
             padding-right: 40px;
             .aouthor-avatar {
@@ -704,6 +744,10 @@ header {
                 font-size: 24px;
                 font-family: $acbold;
                 color: $almostblack;
+                @include media("<=858px") {
+                    width: 100%;
+                    margin-bottom: 70px;
+                }
             }
         }
         .article-rev {
@@ -716,6 +760,13 @@ header {
                 color: #a6adb4;
                 font-family: $helv;
                 font-size: 14px;
+                @include media("<=858px") {
+                    column-gap: 20px;
+                    height: auto;
+                }
+                @include media("<=485px") {
+                    column-count: 1;
+                }
                 .article-data {
                     img {
                         float: left;
@@ -737,6 +788,9 @@ header {
             height: 500px;
             border-radius: 6px;
             margin-bottom: 20px;
+            @include media("<=790px") {
+                height: 200px;
+            }
             img {
                 position: absolute;
                 width: 100%;
@@ -751,6 +805,52 @@ header {
             font-size: 14px;
             color: #a6adb4;
             margin-bottom: 25px;
+            @include media("<=848px") {
+                width: 100%;
+            }
+        }
+    }
+    .nav-pages {
+        display: none;
+        @include media("<=850px") {
+            display: block;
+        }
+    }
+    .nav-information {
+        font-size: 16px;
+        font-family: $helv;
+        color: $almostblack;
+        font-weight: bold;
+        padding: 20px 0px 40px;
+        border-bottom: 2px solid#EBEDED;
+    }
+    .page-change {
+        padding: 20px 0px;
+        @include flexBox($justify: center);
+        ul {
+            display: flex;
+            .active-num {
+                a {
+                    font-weight: bold;
+                    border-bottom: 2px solid#FA6980;
+                    color: #202124;
+                }
+            }
+            li {
+                padding: 0px 10px;
+                a {
+                    padding: 10px 0;
+                    font-size: 11px;
+                    font-family: $helv;
+                    color: #a6adb4;
+                    transition: color 0.3s;
+                    &:hover {
+                        color: #202124;
+                        font-weight: bold;
+                        border-bottom: 2px solid#FA6980;
+                    }
+                }
+            }
         }
     }
 }
