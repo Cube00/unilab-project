@@ -61,8 +61,9 @@ var trending = new Swiper(".trending-items", {
             spaceBetween: 24,
         },
         630: {
+            slidesPerColumn: 2,
             slidesPerView: 1,
-            spaceBetween: 4,
+            spaceBetween: 20,
         },
     },
 });
