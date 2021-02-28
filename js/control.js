@@ -18,7 +18,6 @@ var morenews = new Swiper(".wrap-items", {
     slidesOffsetBefore: 0,
     grabCursor: true,
     breakpoints: {
-        // when window width is >= 320px
         768: {
             slidesPerColumn: 1,
             slidesPerView: 2,
@@ -51,7 +50,6 @@ var trending = new Swiper(".trending-items", {
     slidesOffsetBefore: 0,
     grabCursor: true,
     breakpoints: {
-        // when window width is >= 320px
         960: {
             slidesPerView: 3,
             spaceBetween: 8,
